@@ -11,6 +11,10 @@ namespace Tugas_PBO_Sistem_Sekolah
         {
             this.Kelas = kelas;
         }
+        public void Belajar()
+        {
+            Console.WriteLine($"{Nama} sedang belajar.");
+        }
         public override void Aktivitas()
         {
             Console.WriteLine($"{Nama} sedang belajar di kelas {Kelas}.");

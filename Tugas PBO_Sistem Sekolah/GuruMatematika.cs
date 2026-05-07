@@ -9,7 +9,7 @@ namespace Tugas_PBO_Sistem_Sekolah
         public GuruMatematika(string nama, int umur) : base(nama, umur, "Matematika")
         {
         }
-        public void MengajarMatematika()
+        public void MengajarHitung()
         {
             Console.WriteLine($"{Nama} sedang mengajar matematika.");
         }

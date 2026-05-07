@@ -31,7 +31,7 @@ class Program
                 guruMath,
                 guruBahasa
             };
-
+        Console.WriteLine();
         foreach (Orang o in orangList)
         {
             o.Aktivitas();
@@ -41,7 +41,7 @@ class Program
         Console.WriteLine();
         siswaSD.Main();
         siswaSMA.UjianNasional();
-        guruMath.MengajarMatematika();
+        guruMath.MengajarHitung();
         guruBahasa.MengajarBahasa();
     }
 }
