@@ -18,10 +18,10 @@ namespace Tugas_PBO_Sistem_Sekolah
         {
             Console.WriteLine($"{Nama} sedang melakukan aktivitas.");
         }
-        public void InfoOrang()
+        public virtual void InfoOrang()
         {
-            Console.WriteLine($"Nama: {Nama}");
-            Console.WriteLine($"Umur: {Umur}");
+            Console.WriteLine($"Nama : {Nama}");
+            Console.WriteLine($"Umur : {Umur}");
         }
     }
 }

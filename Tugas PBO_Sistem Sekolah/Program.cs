@@ -4,44 +4,58 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Membuat objek sekolah
+        // Membuat sekolah
         Sekolah sekolah = new Sekolah();
 
-        // Membuat objek orang
-        SiswaSD siswaSD = new SiswaSD("Budi", 10, "5A");
-        SiswaSMA siswaSMA = new SiswaSMA("Andi", 17, "12 IPA");
-        GuruMatematika guruMath = new GuruMatematika("Pak Darto", 40);
-        GuruBahasa guruBahasa = new GuruBahasa("Bu Sinta", 35);
+        // Membuat objek
+        Siswa siswa = new Siswa("Budi", 15, "10 IPA");
+        Guru guru = new Guru("Pak Darto", 40, "Sejarah");
 
-        // Menambahkan ke sekolah
+        SiswaSD siswaSD = new SiswaSD("Rina", 10, "5A");
+        SiswaSMA siswaSMA = new SiswaSMA("Andi", 17, "12 IPA");
+
+        GuruMatematika guruMath = new GuruMatematika("Pak Budi", 45);
+        GuruBahasa guruBahasa = new GuruBahasa("Bu Sinta", 38);
+
+        // Tambah ke sekolah
+        sekolah.TambahOrang(siswa);
+        sekolah.TambahOrang(guru);
         sekolah.TambahOrang(siswaSD);
         sekolah.TambahOrang(siswaSMA);
         sekolah.TambahOrang(guruMath);
         sekolah.TambahOrang(guruBahasa);
 
-        // Menampilkan semua data
+        // Tampilkan data
+        Console.WriteLine("=== DAFTAR ORANG DI SEKOLAH ===");
         sekolah.DaftarOrang();
 
-        // Demonstrasi polymorphism
+        // Pertanyaan 1
+        Console.WriteLine("\n=== Aktivitas Guru & Siswa ===");
+        siswa.Aktivitas();
+        guru.Aktivitas();
 
-        List<Orang> orangList = new List<Orang>()
-        {
-                siswaSD,
-                siswaSMA,
-                guruMath,
-                guruBahasa
-            };
-        Console.WriteLine();
-        foreach (Orang o in orangList)
-        {
-            o.Aktivitas();
-        }
-
-        // Memanggil method khusus
-        Console.WriteLine();
-        siswaSD.Main();
-        siswaSMA.UjianNasional();
+        // Pertanyaan 2
+        Console.WriteLine("\n=== Guru Matematika ===");
         guruMath.MengajarHitung();
+
+        // Pertanyaan 3
+        Console.WriteLine("\n=== Info Lengkap Guru Matematika ===");
+        guruMath.InfoOrang();
+
+        // Pertanyaan 4
+        Console.WriteLine("\n=== Ujian Nasional ===");
+        siswaSMA.UjianNasional();
+
+        // Pertanyaan 5 - Polymorphism
+        Console.WriteLine("\n=====");
+        Orang orang = new SiswaSD("Doni", 11, "6B");
+        orang.Aktivitas();
+
+        // Method khusus
+        Console.WriteLine("\n====");
+        siswaSD.Main();
         guruBahasa.MengajarBahasa();
+
+        Console.ReadLine();
     }
 }

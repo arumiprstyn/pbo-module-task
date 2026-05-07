@@ -19,5 +19,11 @@ namespace Tugas_PBO_Sistem_Sekolah
         {
             Console.WriteLine($"{Nama} sedang melakukan aktivitas sebagai guru.");
         }
+        public override void InfoOrang()
+        {
+            Console.WriteLine($"Nama           : {Nama}");
+            Console.WriteLine($"Umur           : {Umur}");
+            Console.WriteLine($"Mata Pelajaran : {MataPelajaran}");
+        }
     }
 }
